@@ -25,3 +25,14 @@ body {
     font-size: 0.83vw;
     background-color: var(--background);
 }
+
+.panelParent {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    width: 100%;
+    height: 100%;
+}
+
+.panelParent > div {
+    aspect-ratio: 1 / 1;
+}

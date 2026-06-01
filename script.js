@@ -4,7 +4,7 @@ import sample from "./sampleArray.json" with {type:"json"}
 let panelParent = id("panelParent");
 let rowWidth = window.innerWidth / 10
 let colNum = Math.floor(window.innerHeight / rowWidth)
-panelParent.style.margin = `${(((window.innerHeight / rowWidth) - colNum) * rowWidth) / 2}px 0`
+panelParent.style.padding = `${(((window.innerHeight / rowWidth) - colNum) * rowWidth) / 2}px 0`
 
 let completedTiles = []
 for (let row = 0; row < sample.length; row++) {
@@ -26,12 +26,16 @@ for (let row = 0; row < sample.length; row++) {
                     break
                 }
             }
-            completedTiles.push(sample[row][col])
             let element = panelParent.createElement("div")
-            element.createElement("div", "panel").createElement("div").textContent = sample[row][col]
-            element.style.aspectRatio = `${width} / ${height}`
-            element.style.gridRow = `span ${height}`
-            element.style.gridColumn = `span ${width}`
+            if (sample[row][col] === 0) {
+                element.createElement("div", "empty").textContent = sample[row][col]
+            } else {
+                completedTiles.push(sample[row][col])
+                element.createElement("div", "panel").createElement("div").textContent = sample[row][col]
+                element.style.aspectRatio = `${width} / ${height}`
+                element.style.gridRow = `span ${height}`
+                element.style.gridColumn = `span ${width}`
+            }
         }
     }
 }

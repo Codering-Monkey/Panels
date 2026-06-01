@@ -8,3 +8,4 @@ for (let i = 0; i < colNum; i++) {
         panelParent.createElement("div").textContent = `Row: ${j} / Col: ${i}`
     }
 }
+panelParent.style.margin = `${(((window.innerHeight / rowWidth) - colNum) * rowWidth) / 2}px 0`

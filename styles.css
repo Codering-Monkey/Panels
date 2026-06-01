@@ -30,8 +30,8 @@ body {
     display: grid;
     grid-template-columns: repeat(10, 10%);
     width: 100%;
-    --margin: .5em;
-    --border-radius: 1em;
+    --margin: 0.125em;
+    --border-radius: 0.25em;
     height: 100%;
 }
 

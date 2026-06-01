@@ -57,4 +57,5 @@ body {
     width: calc(100% - 2px);
     border-radius: var(--border-radius);
     corner-shape: scoop;
+    align-content: center;
 }

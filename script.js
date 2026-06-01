@@ -27,8 +27,8 @@ for (let row = 0; row < sample.length; row++) {
                 }
             }
             completedTiles.push(sample[row][col])
-            let element = panelParent.createElement("div", "panel")
-            element.createElement("div").createElement("div").textContent = sample[row][col]
+            let element = panelParent.createElement("div")
+            element.createElement("div", "panel").createElement("div").textContent = sample[row][col]
             element.style.aspectRatio = `${width} / ${height}`
             element.style.gridRow = `span ${height}`
             element.style.gridColumn = `span ${width}`

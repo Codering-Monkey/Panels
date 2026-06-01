@@ -35,13 +35,13 @@ body {
     height: 100%;
 }
 
-.panelParent > .panel {
+.panelParent > div {
     aspect-ratio: 1 / 1;
     text-align: center;
     align-content: center;
 }
 
-.panelParent > .panel > div {
+.panelParent > div > .panel {
     background-color: var(--foreground);
     margin: var(--margin);
     border-radius: var(--border-radius);
@@ -51,7 +51,7 @@ body {
     padding: calc(var(--margin) / 2);
 }
 
-.panelParent > .panel > div > div {
+.panelParent > div > .panel > div {
     border: 1px solid var(--sub-sub-text);
     height: calc(100% - 2px);
     width: calc(100% - 2px);

@@ -35,4 +35,7 @@ body {
 
 .panelParent > div {
     aspect-ratio: 1 / 1;
+    background-color: var(--foreground);
+    text-align: center;
+    align-content: center;
 }

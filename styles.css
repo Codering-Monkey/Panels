@@ -24,19 +24,22 @@
 body {
     font-size: 0.83vw;
     background-color: var(--background);
+    margin: 0;
+    scrollbar-color: var(--foreground) var(--background)
 }
 
 .panelParent {
     display: grid;
     grid-template-columns: repeat(10, 10%);
-    width: 100%;
+    width: calc(100% - 16px);
     --margin: 0.125em;
     --border-radius: 0.25em;
     height: 100%;
 }
 
 .panelParent > div {
-    aspect-ratio: 1 / 1;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
     text-align: center;
     align-content: center;
 }

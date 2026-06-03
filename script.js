@@ -2,9 +2,12 @@ import {id} from "./dependencies.js"
 import sample from "./sampleArray.json" with {type:"json"}
 
 let panelParent = id("panelParent");
-let rowWidth = window.innerWidth / 10
+let rowWidth = panelParent.getBoundingClientRect().width / 10
 let colNum = Math.floor(window.innerHeight / rowWidth)
 panelParent.style.padding = `${(((window.innerHeight / rowWidth) - colNum) * rowWidth) / 2}px 0`
+panelParent.style.height = `${rowWidth * (colNum + 1)}px`
+panelParent.style.gridTemplateRows = `repeat(${colNum + 1}, ${rowWidth}px)`
+panelParent.style.gridTemplateColumns = `repeat(10, ${rowWidth}px)`
 
 let completedTiles = []
 for (let row = 0; row < sample.length; row++) {
@@ -32,7 +35,6 @@ for (let row = 0; row < sample.length; row++) {
             } else {
                 completedTiles.push(sample[row][col])
                 element.createElement("div", "panel").createElement("div").textContent = sample[row][col]
-                element.style.aspectRatio = `${width} / ${height}`
                 element.style.gridRow = `span ${height}`
                 element.style.gridColumn = `span ${width}`
             }
